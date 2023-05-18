@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Coloque su texto a invertir </title>
+  <script>
+    function invertirTexto() {
+      // Obtener el texto ingresado por el usuario
+      var texto = document.getElementById("texto").value;
+
+      // Invertir el texto
+      var textoInvertido = texto.split('').reverse().join('');
+
+      // Mostrar el texto invertido en el div de resultado
+      document.getElementById("resultado").textContent = textoInvertido;
+    }
+  </script>
+</head>
+<body>
+  <h1>A continuación tendrá su texto invertido</h1>
+  <label for="texto">Estimado usuario ingresar un texto:</label>
+  <input type="text" id="texto">
+
+  <button onclick="invertirTexto()">Clic aquí</button>
+
+  <div id="resultado"></div>
+</body>
+</html>
+

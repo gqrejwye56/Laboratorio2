@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> "Felices Fiestas Arequipa"....</title>
+  <script>
+    function calcularDiasFaltantes() {
+      // Teniendo en cuenta los datos del sitio web compartido para fecha actual
+      var fechaActual = new Date();
+
+      // Aniversario de Arequipa (15 de agosto)
+      var fechaArequipa = new Date(fechaActual.getFullYear(), 7, 15);
+
+      // Si la fecha actual es después del día de Arequipa del año actual, se suma un año a la fecha de Arequipa
+      // creamos un condicional if
+      if (fechaActual > fechaArequipa) {
+        fechaArequipa.setFullYear(fechaActual.getFullYear() + 1);
+      }
+
+      // Calcula la diferencia en milisegundos entre las dos fechas
+      var diferenciaMilisegundos = fechaArequipa - fechaActual;
+// Calcula el número de días faltantes
+      var diasFaltantes = Math.ceil(diferenciaMilisegundos / (1000 * 60 * 60 * 24));
+
+      // Muestra el resultado en el div de resultado
+      document.getElementById("resultado").textContent = "Faltan " + diasFaltantes + " días para el Día de Arequipa.";
+    }
+  </script>
+</head>
+<body>
+  <h1>Felices Fiestas Arequipa - "En mis venas no corre sangre hierve lava"....</h1>
+  <h1>Hermosa Ciudad Blanca - Arequipa - Perú</h1>
+
+  <button onclick="calcularDiasFaltantes()">¿Cuántos días faltan?</button>
+
+  <div id="resultado"></div>
+</body>
+</html>
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <title>
+        Vamos a obtener el código de la sesión de Google Meet
+    </title>
+
+  </head>
+  <body>
+
+    <div class="container">
+      <label for="url">¡Hola!....Ingresa el URL de la sesión de Google Meet:</label>
+      <input type="text" id="url" />
+      <button onclick="obtenerCodigo()">Obtener código de sesión</button>
+      <p>Código de la sesión meet: <span id="codigo"></span></p>
+
+    </div>
+
+    <script> //aquí genero mi script 
+      function obtenerCodigo() {
+
+        //Valor del campo de entrada de texto (enlace)
+
+        const url = document.getElementById("url").value; //devuelve un elemento con un valor específico
+        //obtener el código de la sesión a partir de la URL
+
+        const codigo = url.split("/").pop().replace(/-/g, ""); //divisor de la URL
+        
+        //muestra el código de la sesión sin guiones separadores en el párrafo correspondiente
+        document.getElementById("codigo").innerHTML = codigo;
+      }
+    </script>
+
+  </body>
+</html>
